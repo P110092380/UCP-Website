@@ -1,0 +1,80 @@
+<div class="container">
+
+  <h1 class="mt-4 mb-3" style="text-align: center; color: #31b7bc"> Open day </h1>
+
+    <!-- Image Header -->
+    <img class="d-block w-100" src="assets/images/openDay.jpg" alt="University logo" style="width:1500px;height:450px;">  
+    <div class="row">
+      <div class="col-lg-5 md-5">
+        <!--virtual tour/open day form-->
+        <h4 class="card-header" style="text-align: center; color: #31b7bc;">Take a virutal tour</h4>
+        <div class="container">          
+          <label for="input1">
+            <div id="b1" class="button"></div>
+          </label>
+          <label for="input2">
+            <div id="b2" class="button"></div>
+          </label>
+          <label for="input3">
+            <div id="b3" class="button"></div>
+          </label>
+          
+          <div id="content1" class="content">
+            <h1>Ground Floor</h1>
+            <a href="https://my.matterport.com/show/?m=cEK5eForTcm" target="_blank" class="cta">Take the tour</a>
+          </div>
+          <div id="content2" class="content">
+              <h1>First Floor</h1>
+              <a href="https://my.matterport.com/show/?m=qGKuTehcb7B" target="_blank" class="cta">Take the Tour</a>
+          </div>
+          <div id="content3" class="content">
+            <h1>Second Floor</h1>
+            <a href="https://my.matterport.com/show/?m=MbiVnNWY8qb" target="_blank" class="cta">Take the Tour</a>
+          </div>                                                                                            
+        </div>
+      </div>
+      <div class="col-lg-2"></div>
+      <!--Form-->
+      <div class="col-lg-5 md-6">
+        <div class="card h-100">
+          <h4 class="card-header" style="text-align: center; color: #31b7bc;">Open day form</h4>
+          <div class="card-body" style="text-align: center;">
+            <div [hidden]="submitted">
+              <form (ngSubmit)="onSubmit()" #form="ngForm">
+                <div class="form-group">
+                  <label>Full Name:</label>
+                  <input type="text" class="form-control" id="name" [(ngModel)]="model.name" name="name" #name="ngModel">
+                </div>
+                <br>
+                <div class="form-group">
+                  <label>Contact Number:</label>
+                  <input type="tel" class="form-control" id="number" [(ngModel)]="model.number" name="number">
+                </div>
+                <br>
+                <div class="form-group">
+                  <label>Email address:</label>
+                  <input type="email" class="form-control" id="email" [(ngModel)]="model.email" name="email">
+                </div>
+                <br>
+                <div class="form-group">
+                  <label>Home Address:</label>
+                  <textarea type="text" class="form-control" id="address" [(ngModel)]="model.address" name="address" #name="ngModel"></textarea>
+                </div>
+                <br>
+                <div class="form-group">
+                  <label> Current Subjects:</label>
+                  <textarea type="text" class="form-control" id="subject" required [(ngModel)]="model.subject" name="subject" #name="ngModel"></textarea>
+                </div>
+                <br>
+                <label> Keep in contact:</label>
+                <br>
+                <input type="checkbox" class="input" id="input1" name="inputs"> Yes
+                <br>
+                <input type="checkbox" class="input" id="input2" name="inputs"> No     
+                <br>
+                <button>Submit</button>
+              </form>
+            </div>  
+          </div>
+        </div>
+      </div>

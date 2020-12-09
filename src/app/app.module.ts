@@ -1,6 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatTableModule} from '@angular/material/table';
+import {MatSelectModule} from '@angular/material/select';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -23,10 +29,10 @@ import { JournalismComponent } from './journalism/journalism.component';
 import { NewsComponent } from './news/news.component';
 import { SupportComponent } from './support/support.component';
 import { NewsArticleComponent } from './news-article/news-article.component';
-import { EventsArticleComponent } from './events-article/events-article.component';
-import { UCASComponent } from './ucas/ucas.component';
-import { from } from 'rxjs';
-import { OpenDayComponent } from './open-day/open-day.component';
+import { FormComponent } from './form/form.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -51,13 +57,18 @@ import { OpenDayComponent } from './open-day/open-day.component';
     NewsComponent,
     SupportComponent,
     NewsArticleComponent,
-    EventsArticleComponent,
-    UCASComponent,
-    OpenDayComponent,
+    FormComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatInputModule,
+    MatTableModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

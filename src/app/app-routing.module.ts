@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { from } from 'rxjs';
+
 import {HomeComponent} from './home/home.component';
 import {AboutComponent} from './about/about.component';
 import {AccountingComponent} from './accounting/accounting.component';
@@ -18,9 +18,9 @@ import {FaqsComponent} from './faqs/faqs.component';
 import {JournalismComponent} from './journalism/journalism.component';
 import {NewsComponent} from './news/news.component';
 import {SupportComponent} from './support/support.component';
-import {EventsArticleComponent} from './events-article/events-article.component';
 import {NewsArticleComponent} from './news-article/news-article.component';
-import {UCASComponent} from './ucas/ucas.component';
+import {FormComponent} from'./form/form.component';
+import { from } from 'rxjs';
 
 const routes: Routes = [
 {path: '', component: HomeComponent},
@@ -40,9 +40,8 @@ const routes: Routes = [
 {path: 'journalism', component: JournalismComponent},
 {path: 'news', component: NewsComponent},
 {path: 'support', component: SupportComponent},
-{path: 'eventArticle', component:EventsArticleComponent},
 {path: 'newsArticle', component:NewsArticleComponent},
-{path: 'ucas', component:UCASComponent},
+{path: 'form', component:FormComponent},
 ];
 
 @NgModule({

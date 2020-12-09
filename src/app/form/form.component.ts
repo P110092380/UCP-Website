@@ -1,23 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component} from '@angular/core';
+import {OpenDay} from '../open-day/open-day.component';
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css']
 })
-export class FormComponent implements OnInit {
+export class FormComponent{
+  topic = ['Business and Professional', 'Social Sciences', 'Creative Industries', 'Education and Teaching', 'Science and Technology'];
+  model = new OpenDay('Enter your name',123, 'enter your email','enter your home address', 'enter current subjects');
+  submitted = false;
+  onSubmit() {this.submitted = true;}
+  get diagnostic() {return JSON.stringify(this.model);}
 
-  submitOpenDay (form: { value: any; reset: () => void; }){ 
-    console.log(form.value);
-    alert("the form was submitted");
-    form.reset();
-  }
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-  getValues(value)
-  {
-    console.log(value)
+  newOpenDay() {
+    this.model = new OpenDay('',123, '','', '');
   }
 }

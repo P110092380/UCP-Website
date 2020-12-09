@@ -18,13 +18,13 @@
             <a class="nav-link dropdown-toggle" routerLink="#" id="navbarDropdownCourses" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style=" color: #b2dddf">
               Courses
             </a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownCourses">
-              <a class="dropdown-item" routerLink="courses.1" style=" color: #005c6e">Business and Professional</a>
-              <a class="dropdown-item" routerLink="courses.2" style=" color: #005c6e">Social Sciences</a>
-              <a class="dropdown-item" routerLink="courses.3" style=" color: #005c6e">Creative Industries</a>
-              <a class="dropdown-item" routerLink="courses.4" style=" color: #005c6e">Education and Teaching</a>
-              <a class="dropdown-item" routerLink="courses.5" style=" color: #005c6e">Science and Technology</a>
-              <a class="dropdown-item" routerLink="courses.6" style=" color: #005c6e">Partner Courses</a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownCourses" >
+              <a class="dropdown-item" routerLink="courses.1" style=" color: #f08575">Business and Professional</a>
+              <a class="dropdown-item" routerLink="courses.2" style=" color: #f08575">Social Sciences</a>
+              <a class="dropdown-item" routerLink="courses.3" style=" color: #f08575">Creative Industries</a>
+              <a class="dropdown-item" routerLink="courses.4" style=" color: #f08575">Education and Teaching</a>
+              <a class="dropdown-item" routerLink="courses.5" style=" color: #f08575">Science and Technology</a>
+              <a class="dropdown-item" routerLink="courses.6" style=" color: #f08575">Partner Courses</a>
             </div>
           </li>
           <li class="nav-item">
@@ -35,8 +35,8 @@
               What's happening?
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownEvents">
-              <a class="dropdown-item" routerLink="events" style=" color: #005c6e">Events</a>
-              <a class="dropdown-item" routerLink="news" style=" color: #005c6e">News</a>
+              <a class="dropdown-item" routerLink="events" style=" color: #f08575">Events</a>
+              <a class="dropdown-item" routerLink="news" style="color: #f08575">News</a>
             </div>
           </li>
           <li class="nav-item">
@@ -46,11 +46,19 @@
         <ul class="nav navbar-nav navbar-right">
           <li><a routerLink="#"><span></span> </a></li>
         </ul>
-  
+        
         <form class="form-inline mt-2 mt-md-0">
           <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="color: #f08575; border-color: #f08575;">Search</button>
         </form>
+        <table mat-table [dataSource]="dataSource">
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef>name</th>
+            <td mat-cell *matCellDef="let element">{{element.name}}</td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns;"></tr>
+          <tr mat-row *matRowDef="let row; columns:displayedColumns"></tr>
+        </table>
       </div>
     </div>
     <div ng-view></div>
